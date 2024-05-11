@@ -1,15 +1,12 @@
-div.block-gjk4all-p2000 {
-}
-
-div.block-gjk4all-p2000 h2 {
+h2.p2000 {
     margin: 0;
     line-height: 1.2em;
 }
 
-div.block-gjk4all-p2000 div.p2000_msg {
+div.p2000_msg {
     background-image: url(p2000.gif);
     background-position-x: center;
-    background-position-y: bottom;
+    background-position-y: top;
     background-size: contain;
     background-repeat: no-repeat;
     background-attachment: initial;
@@ -18,18 +15,19 @@ div.block-gjk4all-p2000 div.p2000_msg {
     background-color: rgb(226, 84, 101);
     height: 50px;
     margin: 0;
+    margin-bottom: 10px;
     text-align: center;
     padding: 5px 100px 5px 215px;
 }
 
-div.block-gjk4all-p2000 p.p2000_line1 {
+p.p2000_line1 {
     margin: 0;
     font-size: 13px;
     line-height: 1.2em;
     color: #FFFFFF;
 }
 
-div.block-gjk4all-p2000 p.p2000_line2 {
+p.p2000_line2 {
     margin: 0;
     font-size: 13px;
     line-height: 1.2em;
