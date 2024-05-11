@@ -1,0 +1,43 @@
+div.block-gjk4all-p2000 {
+    background-image: url(p2000.gif);
+    background-position-x: center;
+    background-position-y: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(226, 84, 101);
+    height: 45px;
+    margin: 0;
+    text-align: center;
+    padding: 5px 100px 5px 215px;
+}
+
+div.block-gjk4all-p2000 h2 {
+    margin: 0;
+    line-height: 1.2em;
+}
+
+div.block-gjk4all-p2000 img {
+    display: inline-block;
+}
+
+div.block-gjk4all-p2000 img#p2000_left {
+    align: left;
+}
+
+div.block-gjk4all-p2000 img#p2000_right {
+    align: right;
+}
+
+div.block-gjk4all-p2000 div#p2000_msg {
+    display: inline-block;
+}
+
+div.block-gjk4all-p2000 p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.2em;
+    color: #FFFFFF;
+}

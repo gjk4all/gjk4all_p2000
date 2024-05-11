@@ -1,0 +1,5 @@
+gjk4all_p2000:
+  page_title: 'P2000 Meldingen'
+  capcodes: '0401089, 0401199, 0401173, 0401101'
+  max_age: '4'
+  date_type: 'long'

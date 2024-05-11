@@ -1,0 +1,7 @@
+name: GJK4All P2000 Module
+description: Display P2000 Messages
+package: 'Parkstad Veendam'
+type: module
+version: 1.0
+core_version_requirement: ^10
+configure: gjk4all_p2000.form

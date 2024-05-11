@@ -1,0 +1,10 @@
+gjk4all_p2000.admin_config_parkstadveendam:
+  title: 'Parkstad Veendam'
+  route_name: gjk4all_p2000.admin_config_parkstadveendam
+  parent: system.admin_config
+  weight: 0
+gjk4all_p2000.form:
+  title: 'GJK4All P2000 module settings'
+  description: 'P2000 selection settings'
+  parent: gjk4all_p2000.admin_config_parkstadveendam
+  route_name: gjk4all_p2000.form

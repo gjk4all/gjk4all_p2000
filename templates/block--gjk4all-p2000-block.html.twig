@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Default theme implementation to print P2000 messages.
+ *
+ * Available variables:
+ *   - source_text
+ *
+ * @see template_preprocess_gjk4all_p2000()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('gjk4all_p2000/gjk4all_p2000') }}
+<div{{ attributes }}>
+{% for item in source_text %}
+  <p>{{ item }}</p>
+{% endfor %}
+</div>

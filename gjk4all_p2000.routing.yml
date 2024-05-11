@@ -1,0 +1,15 @@
+gjk4all_p2000.admin_config_parkstadveendam:
+  path: '/admin/config/parkstadveendam'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Parkstad Veendam'
+  requirements:
+    _permission: 'administer site configuration'
+gjk4all_p2000.form:
+  path: '/admin/config/parkstadveendam/gjk4all_p2000'
+  defaults:
+    _form: '\Drupal\gjk4all_p2000\Form\Gjk4allP2000Form'
+    _title: 'P2000 settings'
+  requirements:
+    _permission: 'administer site configuration'
+

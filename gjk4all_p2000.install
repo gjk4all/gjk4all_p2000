@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for the GJK4All P2000 module.
+ */
+
+use Drupal\user\RoleInterface;
+
+/**
+ * Implements hook_install().
+ */
+function gjk4all_p2000_install() {
+  user_role_change_permissions(RoleInterface::ANONYMOUS_ID, [
+      'view p2000 messages' => TRUE,
+  ]);
+}

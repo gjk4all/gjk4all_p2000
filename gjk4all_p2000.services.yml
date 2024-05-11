@@ -1,0 +1,4 @@
+services:
+  gjk4all_p2000.gjk4all_p2000_service:
+    class: \Drupal\gjk4all_p2000\Service\Gjk4allP2000Service
+    arguments: []

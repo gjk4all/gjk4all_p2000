@@ -1,0 +1,5 @@
+gjk4all_p2000:
+  version: 1.x
+  css:
+    theme:
+      css/gjk4all_p2000.css: {}

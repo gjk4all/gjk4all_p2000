@@ -1,0 +1,33 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+
+function gjk4all_p2000_help($route_name, RouteMatchInterface $route_match) {
+    switch ($route_name) {
+        case 'help.page.gjk4all_p2000':
+            $output = '';
+            $output .= '<h2>' . t('P2000 messages for parkstadveendam.nl.') . '</h2>';
+            $output .= '<h3>' . t('Instructions.') . '</h3>';
+            $output .= '<p>' . t('Bla bla bla...') . '</p>';
+            return $output;
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function gjk4all_p2000_theme($existing, $type, $theme, $path) {
+  $variables = array(
+    'gjk4all_p2000' => array(
+      'variables' => array(
+        'source_text' => NULL,
+      ),
+      'template' => 'block--gjk4all-p2000-block',
+    ),
+  );
+  return $variables;
+}
