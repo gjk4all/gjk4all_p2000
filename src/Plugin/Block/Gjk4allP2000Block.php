@@ -53,4 +53,7 @@ class Gjk4allP2000Block extends BlockBase {
     );
   } 
 
+  public function getCacheMaxAge() {
+    return 0;
+  }
 }

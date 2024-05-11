@@ -18,16 +18,32 @@ class Gjk4allP2000Service {
     public function generate() {
         $config = \Drupal::config('gjk4all_p2000.settings');
         $page_title = $config->get('gjk4all_p2000.page_title');
+        $type = $config->get('gjk4all_p2000.date_type');
+        $formats = array_keys(\Drupal::entityTypeManager()->getStorage('date_format')->loadMultiple());
+        $formatter = \Drupal::service('date.formatter');
 
-        $element['#source_text'] = [];
-        $element['#source_text'][] = Html::escape("Bla bla bla...");
-        $element['#title'] = Html::escape($page_title);
-        $element['#theme'] = 'gjk4all_p2000';
+        $row = $this->getP2000Message();
+
+        if ($row != false) {
+            $element['#source_text'] = [];
+            $element['#source_text'][] = [
+                'class' => 'p2000_line1',
+                'text' => Html::escape("112 melding van: " . 
+                    $formatter->format($row['p2000_datumtijd'], $formats[$type])
+                ),
+            ];
+            $element['#source_text'][] = [
+                'class' => 'p2000_line2',
+                'text' => Html::escape($row['p2000_bericht']),
+            ];
+            $element['#title'] = Html::escape($page_title);
+            $element['#theme'] = 'gjk4all_p2000';
+        }
 
         return $element;
     }
 
-    private function getP200Message() {
+    private function getP2000Message() {
         $config = \Drupal::config('gjk4all_p2000.settings');
         $capcodes = $config->get('gjk4all_p2000.capcodes');
         $max_age = $config->get('gjk4all_p2000.max_age');

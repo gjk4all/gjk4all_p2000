@@ -12,8 +12,8 @@
  */
 #}
 {{ attach_library('gjk4all_p2000/gjk4all_p2000') }}
-<div{{ attributes }}>
+<div class="p2000_msg"{{ attributes }}>
 {% for item in source_text %}
-  <p>{{ item }}</p>
+  <p class="{{ item.class }}">{{ item.text }}</p>
 {% endfor %}
 </div>
