@@ -4,20 +4,32 @@ h2.p2000 {
 }
 
 div.p2000_msg {
-    background-image: url(p2000.gif);
-    background-position-x: center;
-    background-position-y: top;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
     background-color: rgb(226, 84, 101);
-    height: 50px;
+    min-height: 50px;
     margin: 0;
     margin-bottom: 10px;
     text-align: center;
-    padding: 5px 100px 5px 215px;
+    padding: 5px;
+}
+
+@media (min-width: 576px) {
+    div.p2000_msg {
+        background-image: url(p2000.gif);
+        background-position-x: center;
+        background-position-y: top;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        padding: 5px 50px 5px 125px;
+    }
+}
+
+@media (min-width: 768px) {
+    div.p2000_msg {
+        padding: 5px 100px 5px 215px;
+    }
 }
 
 p.p2000_line1 {
