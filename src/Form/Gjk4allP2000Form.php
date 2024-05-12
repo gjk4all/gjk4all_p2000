@@ -54,7 +54,8 @@ class Gjk4allP2000Form extends ConfigFormBase {
       '#options' => $formats,
       '#default_value' =>  $config->get('gjk4all_p2000.date_type'),
       '#description' => $this->t('The date format used in the block.'),
-      '#field_suffix' => '<small id="edit-output" data-drupal-date-formatter="preview">Voorbeeld: ' . 
+      '#field_suffix' => '<small id="edit-output" data-drupal-date-formatter="preview">' . 
+        t('Example:') . ' ' .
         $formatter->format(time(), $formats[ $config->get('gjk4all_p2000.date_type')], '', NULL, NULL) . 
         '</small>',
       '#ajax' => [
@@ -111,7 +112,8 @@ class Gjk4allP2000Form extends ConfigFormBase {
     $formatter = \Drupal::service('date.formatter');
     $type = $form_state->getValue('date_type');
 
-    $output = '<small id="edit-output" data-drupal-date-formatter="preview">Voorbeeld: ' . 
+    $output = '<small id="edit-output" data-drupal-date-formatter="preview">' .
+      t('Example:') . ' ' .
       $formatter->format(time(), $formats[$type], '', NULL, NULL) . 
       '</small>';
 

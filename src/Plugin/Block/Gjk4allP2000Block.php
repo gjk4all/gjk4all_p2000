@@ -24,7 +24,7 @@ class Gjk4allP2000Block extends BlockBase {
    */
   public function build() {
     $service = \Drupal::service('gjk4all_p2000.gjk4all_p2000_service');
-    return $service->generate();
+    return $service->generateBlock();
   }
 
   /**

@@ -15,7 +15,7 @@ use Drupal\Core\Database\Connection;
  */
 class Gjk4allP2000Service {
 
-    public function generate() {
+    public function generateBlock() {
         $config = \Drupal::config('gjk4all_p2000.settings');
         $page_title = $config->get('gjk4all_p2000.page_title');
         $type = $config->get('gjk4all_p2000.date_type');
@@ -25,10 +25,11 @@ class Gjk4allP2000Service {
         $row = $this->getP2000Message();
 
         if ($row != false) {
+            $element['#cache']['max-age'] = 60;
             $element['#source_text'] = [];
             $element['#source_text'][] = [
                 'class' => 'p2000_line1',
-                'text' => Html::escape("112 melding van: " . 
+                'text' => Html::escape(t("Message from time:") . " " .
                     $formatter->format($row['p2000_datumtijd'], $formats[$type])
                 ),
             ];

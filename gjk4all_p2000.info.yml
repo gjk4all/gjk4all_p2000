@@ -5,3 +5,6 @@ type: module
 version: 1.0
 core_version_requirement: ^10
 configure: gjk4all_p2000.form
+interface translation project: gjk4all_p2000
+interface translation server pattern: modules/custom/gjk4all_p2000/translations/%project.%language.po
+
