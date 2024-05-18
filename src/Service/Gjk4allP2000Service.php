@@ -22,23 +22,34 @@ class Gjk4allP2000Service {
         $formats = array_keys(\Drupal::entityTypeManager()->getStorage('date_format')->loadMultiple());
         $formatter = \Drupal::service('date.formatter');
 
-        $row = $this->getP2000Message();
+        $cid = 'gjk4all_p2000:' . \Drupal::languageManager()->getCurrentLanguage()->getId();
 
-        if ($row != false) {
-            $element['#cache']['max-age'] = 60;
-            $element['#source_text'] = [];
-            $element['#source_text'][] = [
-                'class' => 'p2000_line1',
-                'text' => Html::escape(t("Message from time:") . " " .
-                    $formatter->format($row['p2000_datumtijd'], $formats[$type])
-                ),
-            ];
-            $element['#source_text'][] = [
-                'class' => 'p2000_line2',
-                'text' => Html::escape($row['p2000_bericht']),
-            ];
-            $element['#title'] = Html::escape($page_title);
-            $element['#theme'] = 'gjk4all_p2000';
+        $element = NULL;
+
+        if ($cache = \Drupal::cache()->get($cid)) {
+            $element = $cache->data;
+        }
+        if ($element == NULL) {
+            $row = $this->getP2000Message();
+
+            if ($row != false) {
+                $element['#cache']['max-age'] = 60;
+                $element['#source_text'] = [];
+                $element['#source_text'][] = [
+                    'class' => 'p2000_line1',
+                    'text' => Html::escape(t("Message from time:") . " " .
+                        $formatter->format($row['p2000_datumtijd'], $formats[$type])
+                    ),
+                ];
+                $element['#source_text'][] = [
+                    'class' => 'p2000_line2',
+                    'text' => Html::escape($row['p2000_bericht']),
+                ];
+                $element['#title'] = Html::escape($page_title);
+                $element['#theme'] = 'gjk4all_p2000';
+            }
+
+            \Drupal::cache()->set($cid, $element, time() + 60, ['block:P2000']); // 60 sec cache
         }
 
         return $element;

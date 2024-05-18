@@ -22,13 +22,7 @@ div.p2000_msg {
         background-attachment: initial;
         background-origin: initial;
         background-clip: initial;
-        padding: 5px 50px 5px 125px;
-    }
-}
-
-@media (min-width: 768px) {
-    div.p2000_msg {
-        padding: 5px 100px 5px 215px;
+        padding: 5px 10% 5px 21%;
     }
 }
 
