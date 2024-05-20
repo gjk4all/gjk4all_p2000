@@ -38,7 +38,7 @@ class Gjk4allP2000Service {
                 $element['#source_text'][] = [
                     'class' => 'p2000_line1',
                     'text' => Html::escape(t("Message from time:") . " " .
-                        $formatter->format($row['p2000_datumtijd'], $formats[$type])
+                        $formatter->format($row['p2000_datumtijd'], "long")
                     ),
                 ];
                 $element['#source_text'][] = [
